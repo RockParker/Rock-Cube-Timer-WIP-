@@ -1,0 +1,32 @@
+﻿
+-----------------------------------------
+Currently working on:
+
+	> (Completed) << I don't like JSON Files but they are very nice for object storage !!!!!>> 
+				need to make the method that reads the json files
+
+	> (Completed) << not enough bug testing yet >> 
+				should then add in the part that takes the deserialized json files and turns them back into clickable buttons in the timeslist panel
+
+	> (Completed) << not enough bug testing yet >> 
+				I would like to turn the window that opens into a little drop down that holds the buttons with the values
+		
+		>>Maybe add a way for people to make a custom theme on the fly. shouldn't be toooooo hard. I have no idea though
+
+	> ??Maybe should add something that allows you to delete some times incase there is something programmatically wrong or pebkac
+
+	> settings loader for when the program has just started
+
+		> Should load the cube that was "active" before the program was closed
+			> should load the list of times associated with the cube
+			> wouldn't hurt to generate a scramble relevant to the cube
+
+		> (Completed) << I hope it continues to work well >>
+					Should load the theme that was active before the program was closed
+
+		> (Completed) << Works, lets hope it stays that way>> 
+			should load the window state (Fullscreen || Normal)	
+
+
+		> (Completed) << it is easy to tell now >>
+					checkerboard the buttons and their respective "drop down" so that it is easier to tell which is which

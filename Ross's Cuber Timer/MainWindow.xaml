@@ -1,0 +1,94 @@
+﻿<Window x:Class="Ross_Cuber_Timer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ross_Cuber_Timer"
+        mc:Ignorable="d"
+        
+        Title="Ross Cuber Timer" Height="600" Width="960" KeyDown="OnKeyDown" KeyUp="OnKeyUp">
+    <!-- this is how you comment -->
+    <Window.Resources>
+        <FontFamily x:Key="defaultFont">Verdana</FontFamily>
+        <BitmapImage x:Key="SettingsIcon" UriSource="Images/GearIcon.jpg"/>
+        <Style TargetType="{x:Type Window}">
+            <Setter Property="FontFamily" Value="{StaticResource defaultFont}"/>
+        </Style>
+        <ResourceDictionary x:Key="ResourceDict">
+            <ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <!-- Defining the columns for formatting purposes.-->
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="212*"/>
+            <ColumnDefinition Width="529*"/>
+            <ColumnDefinition Width="201*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Here starts the actual elements that are shown on the window 
+        This section contains Children elements that are on the left side of the window-->
+        <StackPanel Grid.Column ="0">
+            <Label Name="lblTimeListDesc" Content="10 Most Recent Times:"/>
+            <StackPanel Name ="spTimeList"  HorizontalAlignment="Left"/>
+        </StackPanel>
+
+
+        <!-- Here starts the elements that are in the middle of the window, they are the focus-->
+        <Viewbox Name = "Middle_of_Window" Grid.Column= "1" Stretch="Uniform">
+            <StackPanel Name ="vbTimer"  VerticalAlignment="Center">
+                <!-- I'm using a wierd techinique to center everything because I have very little experience with XAML and this was the 
+                way that I found to make things scale with the size of the window at least somewhat well-->
+
+                <TextBlock                 
+                Name="txtSolvingTimer"                 
+                FontWeight="Bold"
+                HorizontalAlignment="Center"  
+                    FontSize="75"
+                >00:00.00</TextBlock>
+                <Viewbox>
+                    <Label Name="lblScramble" FontWeight="DemiBold" FontSize="18" HorizontalAlignment="Center">Scramble Here</Label>
+                </Viewbox>
+
+                <Button Name="Generate_Scramble" Click="Generate_Scramble_Click">Generate</Button>
+                <Button Name="btnSave" Click="btnSave_Click">Save</Button>
+                <Button  Name = "RetryButton" Margin="225,20" Click="RetryButton_Click" Visibility="Hidden">New Scramble</Button>
+
+                <!-- This is all the buttons that I use to force situations. They are only for testing purposes and are not intended to 
+                      stay in the "final product"-->
+                <!-- This button generates an error this is so I could see if my error catching and log making works.-->
+                <Button Name="btnError" Click="btnError_Click" Visibility="Hidden">Make an Error</Button>
+
+            </StackPanel>
+        </Viewbox>
+
+        <!-- Here is where the right side of the Window begins-->
+
+        <StackPanel Grid.Column = "2"  HorizontalAlignment="Right" VerticalAlignment="Top" Grid.ColumnSpan="2" >
+            <Button HorizontalAlignment="Right" VerticalAlignment="Top" Name="btnSettings" Click="btnSettings_Click" Height="33" Width="34">
+                <Image Name="btnSettingsImage" Source = "{DynamicResource SettingsIcon}"/>
+            </Button>
+
+            <!-- This stackpanel hosts the buttons that switch up the type of rubiks cube you are using-->
+            <StackPanel Name="spSettings" HorizontalAlignment="Right" Visibility="Hidden" Grid.Column="2">
+                <Button Name="btnToggleDarkMode" Click="btnToggleDarkMode_Click">Dark Mode</Button>
+
+                <!-- These buttons are the cube selection buttons-->
+                <Button Name="btn2X2" Click="Cube_Change_Click">2x2x2(WIP)</Button>
+                <Button Name="btn3X3" Click="Cube_Change_Click">3x3x3(WIP)</Button>
+                <Button Name="btn4X4" Click="Cube_Change_Click">4x4x4(WIP)</Button>
+                <Button Name="btn5X5" Click="Cube_Change_Click">5x5x5(WIP)</Button>
+
+                <!-- These are general Quality of life things (pretty self explaining)-->
+                <Button Name="btnFullscreen" Click="btnFullscreen_Click">Fullscreen</Button>
+                <Button Name="btnOpenLogs" Click="btnOpenLogs_Click">Open Logs</Button>
+                <Button Name="btnOpenSolves" Click="btnOpenSolves_Click">Open Solves</Button>
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
+
