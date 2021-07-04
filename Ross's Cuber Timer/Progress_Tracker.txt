@@ -1,4 +1,11 @@
 ﻿
+My Commenting format:
+
+	> (State of this change) << this is where I put my comment on the state of the part>>	
+						this is the actual change
+
+						>these are sub-changes
+
 -----------------------------------------
 Currently working on:
 
@@ -11,13 +18,16 @@ Currently working on:
 	> (Completed) << not enough bug testing yet >> 
 				I would like to turn the window that opens into a little drop down that holds the buttons with the values
 		
-		>>Maybe add a way for people to make a custom theme on the fly. shouldn't be toooooo hard. I have no idea though
+		>>(UNDECIDED) << I don't like the idea of people removing their bad times to look better>> 
+					Maybe add a way for people to make a custom theme on the fly. shouldn't be toooooo hard. I have no idea though
 
-	> ??Maybe should add something that allows you to delete some times incase there is something programmatically wrong or pebkac
+	> (UNDECIDED) << This seems pretty complicated so I'll still have to think more about it>> 
+				Maybe should add something that allows you to delete some times incase there is something programmatically wrong or pebkac
 
-	> settings loader for when the program has just started
+	> (Implemented) << I don't think the cubes load properly yet>> 
+				settings loader for when the program has just started
 
-		> Should load the cube that was "active" before the program was closed
+		> (In Progress) << Haven't started >> Should load the cube that was "active" before the program was closed
 			> should load the list of times associated with the cube
 			> wouldn't hurt to generate a scramble relevant to the cube
 
